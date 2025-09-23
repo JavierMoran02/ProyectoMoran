@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Oscar Javier Morán Fuentes</title>
+
+  <!-- Fuente moderna -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ========= Reset básico ========= */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html,body { height: 100%; }
+
+    /* ========= Base ========= */
+    body{
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg, #eefaf0 0%, #f7fff9 50%, #ffffff 100%);
+      color: #15352b;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height: 1.6;
+      padding-bottom: 3rem;
+    }
+
+    /* Contenedor central */
+    .wrap {
+      max-width: 1000px;
+      margin: 2.5rem auto;
+      padding: 1.25rem;
+    }
+
+    /* ========= Header / Hero ========= */
+    header {
+      background: linear-gradient(90deg, rgba(6,120,72,0.09), rgba(6,120,72,0.06));
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 8px 30px rgba(4, 60, 40, 0.06);
+      backdrop-filter: blur(6px);
+      transition: transform .35s ease, box-shadow .35s ease;
+    }
+    header:hover { transform: translateY(-4px); box-shadow: 0 14px 40px rgba(4,60,40,0.09); }
+
+    .title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #0b3d2a;
+      letter-spacing: .6px;
+    }
+
+    .subtitle {
+      display:block;
+      margin-top: .6rem;
+      color: #2b6b52;
+      font-weight: 600;
+      font-size: .95rem;
+      opacity: .95;
+    }
+
+    /* ========= Nav sencillo ========= */
+    nav {
+      margin-top: 1rem;
+    }
+    nav ul {
+      list-style: none;
+      display:flex;
+      gap: .9rem;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin-top:.8rem;
+    }
+    nav a{
+      color: #0b3d2a;
+      background: rgba(11,61,42,0.06);
+      padding: .45rem .8rem;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all .22s ease;
+      border: 1px solid rgba(11,61,42,0.06);
+    }
+    nav a:hover{
+      background: #0b3d2a;
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 18px rgba(6,120,72,0.12);
+    }
+
+    /* ========= Main layout ========= */
+    main {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.4rem;
+      margin-top: 1.6rem;
+    }
+
+    /* Secciones con tarjeta */
+    section.card {
+      background: linear-gradient(180deg, #ffffff, #f8fff9);
+      padding: 1.4rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 22px rgba(8,50,35,0.04);
+      border: 1px solid rgba(6,120,72,0.06);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    section.card:hover { transform: translateY(-6px); box-shadow: 0 18px 36px rgba(8,50,35,0.07); }
+
+    h2 {
+      font-size: 1.4rem;
+      color: #0b3d2a;
+      margin-bottom: .7rem;
+      font-weight: 700;
+      position: relative;
+    }
+    /* accent bar left */
+    h2::before {
+      content: "";
+      position: absolute;
+      left: -1rem;
+      top: 6px;
+      width: 6px;
+      height: calc(100% - 12px);
+      background: linear-gradient(180deg,#2fb86a,#0b8b4f);
+      border-radius: 4px;
+    }
+
+    p { color: #254a3b; font-size: 1rem; margin-bottom: .75rem; }
+
+    /* Proyectos como grid */
+    #proyectos-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+      gap: 1rem;
+      margin-top:.6rem;
+    }
+    .project {
+      background: linear-gradient(180deg,#f7fff9,#ffffff);
+      padding: .9rem;
+      border-radius: 10px;
+      border: 1px solid rgba(6,120,72,0.04);
+      box-shadow: 0 6px 16px rgba(8,50,35,0.03);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .project:hover { transform: translateY(-6px); box-shadow: 0 14px 28px rgba(8,50,35,0.06); }
+
+    .project p { margin: .4rem 0; color:#2b6b52; font-weight:500; }
+
+    /* ========= Footer ========= */
+    footer {
+      margin-top: 1.2rem;
+      text-align:center;
+      color: #14422f;
+      font-size: .95rem;
+    }
+    footer a { color: #0b6b45; font-weight:600; text-decoration: none; border-bottom: 1px dashed rgba(6,120,72,0.12); padding-bottom:2px; }
+    footer a:hover { color: #0b3d2a; border-bottom-style: solid; }
+
+    /* ========= Pequeñas animaciones: escribir suave en títulos (efecto sutil) ========= */
+    .title, h2 {
+      opacity: 0;
+      transform: translateY(6px);
+      animation: appear .6s forwards;
+    }
+    .title { animation-delay: .1s; }
+    #sobre-mi h2 { animation-delay: .25s; }
+    #proyectos h2 { animation-delay: .35s; }
+    footer h2 { animation-delay:.45s; }
+
+    @keyframes appear {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ========= Responsive ========= */
+    @media (max-width:720px){
+      .wrap { padding: 1rem; }
+      h2::before { left: -0.85rem; }
+      .title { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="title">Oscar Javier Morán Fuentes</div>
+      <div class="subtitle">Desarrollador · Creativo · Apasionado por soluciones claras</div>
+
+      <nav aria-label="Principal">
+        <ul>
+          <li><a href="index.html">Maquetación</a></li>
+          <li><a href="Pagina1.html">Página 1</a></li>
+          <li><a href="Pagina2.html">Página 2</a></li>
+          <li><a href="Pagina3.html">Página 3</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="sobre-mi" class="card">
+        <h2>Sobre mí</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo sequi tempora blanditiis. Incidunt est minima voluptas. Laudantium, laborum laboriosam!</p>
+        <p>Beatae placeat eos explicabo assumenda, sequi autem voluptates magnam alias earum quia et, nemo, odio adipisci? Quas, tempore sapiente?</p>
+      </section>
+
+      <section id="proyectos" class="card">
+        <h2>Proyectos</h2>
+
+        <div id="proyectos-list">
+          <article class="project">
+            <p>Proyecto A — resumen breve.</p>
+            <p>Detalle: ideas, stack, resultado.</p>
+          </article>
+
+          <article class="project">
+            <p>Proyecto B — resumen breve.</p>
+            <p>Detalle: ideas, stack, resultado.</p>
+          </article>
+
+          <article class="project">
+            <p>Proyecto C — resumen breve.</p>
+            <p>Detalle: ideas, stack, resultado.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <h2>Contacto</h2>
+      <p>Puedes escribirme a: <a href="mailto:2411010137@undc.edu.pe">2411010137@undc.edu.pe</a></p>
+      <p>&copy; 2025 Oscar Javier Moran Fuentes</p>
+    </footer>
+  </div>
+</body>
+</html>

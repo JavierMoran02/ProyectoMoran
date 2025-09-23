@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oscar Javier Morán Fuentes</title>
+  <style>
+    /* ==== RESET ==== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #f1f1f1;
+      line-height: 1.6;
+    }
+
+    /* ==== HEADER ==== */
+    header {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(0, 0, 0, 0.4);
+      border-bottom: 2px solid #00eaff;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #00eaff;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      white-space: nowrap;
+      border-right: 4px solid #00eaff;
+      width: 0;
+      overflow: hidden;
+      animation: typing 4s steps(30, end) forwards, blink .75s step-end infinite;
+      margin: 0 auto;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #f1f1f1;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #00eaff;
+    }
+
+    /* ==== MAIN ==== */
+    main {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      color: #00eaff;
+      border-bottom: 2px solid #00eaff;
+      display: inline-block;
+      margin: 1.5rem 0 1rem;
+    }
+
+    p {
+      margin: 0.5rem 0;
+    }
+
+    article {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 1rem;
+      border-left: 4px solid #00eaff;
+      margin: 1rem 0;
+      border-radius: 6px;
+    }
+
+    /* ==== FOOTER ==== */
+    footer {
+      background: #0f2027;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      border-top: 2px solid #00eaff;
+    }
+
+    footer a {
+      color: #00eaff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Oscar Javier Morán Fuentes</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Maquetación</a></li>
+        <li><a href="Pagina1.html">Página 1</a></li>
+        <li><a href="Pagina2.html">Página 2</a></li>
+        <li><a href="Pagina3.html">Página 3</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="sobre-mi">
+      <h2>Sobre mí</h2>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo sequi tempora blanditiis. Incidunt est minima voluptas. Laudantium, laborum laboriosam!</p>
+      <p>Beatae placeat eos explicabo assumenda, sequi autem voluptates magnam alias earum quia et, nemo, odio adipisci? Quas, tempore sapiente?</p>
+    </section>
+
+    <section id="proyectos">
+      <h2>Proyectos</h2>
+      <article>
+        <p>Lorem, ipsum.</p>
+        <p>Aliquid, minima!</p>
+      </article>
+      <article>
+        <p>Lorem, ipsum.</p>
+        <p>Perspiciatis, ex!</p>
+      </article>
+      <article>
+        <p>Lorem, ipsum.</p>
+        <p>Molestiae, nesciunt.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer id="contacto">
+    <h2>Contacto</h2>
+    <p>Puedes escribirme a: <a href="mailto:2411010137@undc.edu.pe">2411010137@undc.edu.pe</a></p>
+    <p>&copy; 2025 Oscar Javier Moran Fuentes</p>
+  </footer>
+</body>
+</html>
