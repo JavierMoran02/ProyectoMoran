@@ -1,0 +1,25 @@
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+// Inicializar EmailJS con tu Public Key
+(function(){
+emailjs.init("tAajsyIZ0adS8W_CM");
+})();
+function enviarCorreo(e) {
+e.preventDefault(); // evitar recarga del form
+emailjs.send("service_z4rhfuh", "template_rzedqmb", {
+/*emailjs.send("service_xxx", "template_xxx", {*/
+from_name: document.getElementById("nombre").value,
+from_email: document.getElementById("email").value,
+message: document.getElementById("mensaje").value
+})
+.then((res) => {
+alert("Correo enviado correctamente!");
+console.log("Respuesta:", res);
+})
+.catch((err) => {
+alert("Error al enviar el correo.");
+
+console.error("Error:", err);
+});
+}
+</script>
